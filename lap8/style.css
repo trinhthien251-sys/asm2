@@ -1,0 +1,160 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f0f2f5; /* Nền tổng thể của trang */
+}
+
+/* --- HEADER / BANNER --- */
+.banner {
+    background-image: url('banner.jpg'); /* Đặt tên file ảnh banner */
+    background-size: cover;
+    background-position: center;
+    height: auto; /* Chiều cao của banner */
+    display: flex;
+    align-items: flex-end; /* Căn chữ "FPT Polytechnic" xuống dưới */
+    padding-left: 20px;
+    color: aqua; /* Màu chữ */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Thêm bóng chữ để nổi bật */
+}
+
+.logo-text {
+    font-size: 3em; /* Kích thước chữ FPT Polytechnic */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* --- NAV / MENU NGANG --- */
+.menu > ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background-color: orangered; /* Màu nền cam */
+    text-align: center;
+    border-radius: 0; /* Bỏ border-radius nếu muốn sát cạnh */
+}
+
+.menu > ul > li {
+    display: inline-block;
+    position: relative;
+}
+
+.menu > ul > li > a {
+    display: block;
+    text-decoration: none;
+    font-variant: small-caps;
+    font-size: larger;
+    color: white;
+    padding: 0 15px; /* Tăng padding ngang một chút */
+    line-height: 40px; /* Chiều cao của thanh menu */
+    font-weight: bold;
+}
+
+.menu > ul > li > a:hover {
+    color: yellow;
+    background-color: #e64a19; /* Màu nền khi hover */
+}
+
+/* --- SUBMENU (MENU CON) CỦA LIÊN HỆ --- */
+.menu .submenu {
+    position: absolute;
+    display: none;      /* ẨN menu con */
+    top: 100%;          /* Bắt đầu ngay dưới menu cha */
+    left: 0;
+    text-align: left;
+    min-width: 120px;
+    background-color: orangered; /* Màu nền cam tương tự menu cha */
+    border-radius: 0 0 3px 3px;
+    z-index: 1000;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu .submenu li {
+    display: block;
+}
+
+.menu .submenu li a {
+    display: block;
+    line-height: 30px;
+    padding: 0 15px;
+    color: white;
+    font-size: medium;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+.menu .submenu li a:hover {
+    background-color: #e64a19; /* Màu nền khi hover */
+    color: yellow;
+}
+
+/* HIỂN THỊ submenu khi di chuột qua LI cha có class 'has-submenu' */
+.menu li.has-submenu:hover .submenu {
+    display: block;
+}
+
+/* --- CONTAINER CHÍNH (CHỨA NỘI DUNG VÀ SIDEBAR) --- */
+.container {
+    display: flex; /* Sử dụng Flexbox để đặt nội dung và sidebar */
+    justify-content: space-between; /* Đẩy nội dung và sidebar ra hai phía */
+    width: 960px; /* Chiều rộng cố định của container */
+    margin: 20px auto; /* Căn giữa container */
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Thêm đổ bóng nhẹ */
+    min-height: 400px; /* Chiều cao tối thiểu */
+    border-top: 5px solid #ff5722; /* Đường viền cam ở trên */
+    padding-bottom: 20px; /* Khoảng cách dưới cùng */
+}
+
+.main-content {
+    flex-grow: 1; /* Cho phép nội dung chính chiếm không gian còn lại */
+    padding: 20px;
+    border-right: 1px dotted #ccc; /* Đường chấm ngăn cách với sidebar */
+}
+
+/* --- ASIDE / MENU ĐỨNG BÊN PHẢI --- */
+.right-sidebar {
+    width: 250px; /* Chiều rộng của menu đứng */
+    padding: 20px;
+}
+
+.menu-doc {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ddd; /* Đường viền nhẹ cho menu đứng */
+    border-radius: 3px;
+    background-color: #fff; /* Nền trắng */
+}
+
+.menu-doc li a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 1px dotted #eee; /* Đường chấm nhẹ phân cách */
+    font-size: 0.95em;
+    white-space: nowrap; /* Đảm bảo không xuống dòng */
+    overflow: hidden;    /* Ẩn phần bị tràn */
+    text-overflow: ellipsis; /* Hiển thị dấu ... nếu tràn */
+}
+
+.menu-doc li:last-child a {
+    border-bottom: none;
+}
+
+.menu-doc li a:hover {
+    background-color: #f5f5f5; /* Nền nhạt khi hover */
+    color: #000;
+}
+
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #007bff; /* Màu xanh footer */
+    color: white;
+    font-size: 0.85em;
+    margin-top: 20px;
+}
